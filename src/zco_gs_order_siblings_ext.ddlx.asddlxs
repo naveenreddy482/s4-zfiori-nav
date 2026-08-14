@@ -1,0 +1,53 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Order',
+    typeNamePlural: 'Orders',
+    title: {
+        type: #STANDARD,
+        value: 'OrderID'
+    },
+    description: {
+        type: #STANDARD,
+        value: 'OrderDescription'
+    }
+}
+annotate entity ZCO_C_GS_R_ORDER_SIBLINGS with
+{
+@UI.facet: [{
+    purpose: #STANDARD,
+    position: 10,
+    type: #FIELDGROUP_REFERENCE,
+    targetQualifier: 'siblingInfo',
+    label: 'Order'
+}]
+  @UI.lineItem: [{ position: 10, importance: #HIGH }]
+  @UI.fieldGroup: [{ qualifier: 'siblingInfo', position: 10, label: 'Order ID' }]
+  OrderID;
+  @UI.lineItem: [{ position: 20, importance: #HIGH, label: 'Order Description' }]
+  @UI.fieldGroup: [{ qualifier: 'siblingInfo', position: 20, label: 'Order Description' }]
+  OrderDescription;
+  @UI.lineItem: [{ position: 30, importance: #MEDIUM, label: 'Company Code' }]
+  @UI.fieldGroup: [{ qualifier: 'siblingInfo', position: 30, label: 'Company Code' }]
+  CompanyCode;
+  @UI.lineItem: [{ position: 40, label: 'Order Type' }]
+  @UI.fieldGroup: [{ qualifier: 'siblingInfo', position: 40, label: 'Order Type' }]
+  OrderType;
+  @UI.lineItem: [{ position: 50, importance: #LOW, label: 'External Order ID' }]
+  @UI.fieldGroup: [{ qualifier: 'siblingInfo', position: 50, label: 'External Order ID' }]
+  ExternalOrderID;
+  @UI.lineItem: [{ position: 60 }]
+  @UI.fieldGroup: [{ qualifier: 'siblingInfo', position: 60, label: 'Person Responsible' }]
+  PersonResponsible;
+  @UI.lineItem: [{ position: 70 }]
+  @UI.fieldGroup: [{ qualifier: 'siblingInfo', position: 70, label: 'Created On' }]
+  CreatedOnDate;
+  @UI.lineItem: [{ position: 80, importance: #HIGH }]
+  @UI.fieldGroup: [{ qualifier: 'siblingInfo', position: 80, label: 'Applicant' }]
+  Applicant;
+  @UI.lineItem: [{ position: 90 }]
+  @UI.fieldGroup: [{ qualifier: 'siblingInfo', position: 90, label: 'Currency' }]
+  CompanyCodeCurrency;
+  @UI.lineItem: [{ position: 100, importance: #HIGH, label: 'Total Actual Cost (All Time)' }]
+  @UI.fieldGroup: [{ qualifier: 'siblingInfo', position: 100, label: 'Total Actual Cost (All Time)' }]
+  TotalActualCostAllTime;
+}

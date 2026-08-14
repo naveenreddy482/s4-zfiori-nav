@@ -1,0 +1,162 @@
+@Metadata.layer: #CORE
+//@UI.headerInfo.typeName: 'Total'
+//@UI.headerInfo.typeNamePlural: 'Total Values'
+@UI.headerInfo: {
+    typeName: 'Total',
+    typeNamePlural: 'Total Values',
+    typeImageUrl: 'sap-icon://sales-order',
+    imageUrl: '',
+    title: {
+        type: #STANDARD,
+//        label: '',
+//        iconUrl: '',
+//        criticality: '',
+        criticalityRepresentation: #WITHOUT_ICON,
+        value: 'OrderID'
+//        valueQualifier: '',
+//        targetElement: '',
+//        url: ''
+    },
+    description: {
+        type: #STANDARD,
+//        label: '',
+//        iconUrl: '',
+//        criticality: '',
+//        criticalityRepresentation: #WITHOUT_ICON,
+        value: 'OrderDescription'
+//        valueQualifier: '',
+//        targetElement: '',
+//        url: ''
+    }
+}
+@UI.selectionVariant:[{qualifier: 'all',text: 'all'},
+{qualifier: 'companycode',text: 'companycode', filter: 'CompanyCode EQ "1010"'}]
+@UI.presentationVariant: [{qualifier: 'pv_all',
+                            text: 'all',
+                            maxItems: 200,
+                            sortOrder: [{ by: 'OrderID', direction: #DESC }],
+                            requestAtLeast: [ 'OrderID' ] ,
+                            visualizations: [{ type: #AS_LINEITEM }],
+                            selectionFieldsQualifier: 'all'},
+{qualifier: 'pv_companycode',
+                            text: 'companycode',
+                            maxItems: 30,
+                            sortOrder: [{ by: 'CreatedOnDate', direction: #DESC }],
+//                            requestAtLeast: [ 'OrderID' ] ,
+                            visualizations: [{ type: #AS_LINEITEM,qualifier: 'companycode' }],
+                            selectionFieldsQualifier: 'companycode'
+
+
+ }]
+
+@UI.selectionPresentationVariant: [{ qualifier: 'SPV_all',text: 'all',selectionVariantQualifier: 'all',presentationVariantQualifier: 'pv_all' },
+{ qualifier: 'SPV_companycode',text: 'pv_companycode',selectionVariantQualifier: 'companycode',presentationVariantQualifier: 'pv_companycode' }
+]
+@UI.lineItem: [{criticality: 'TotalActualCostcriticallity'}]
+annotate entity ZCO_C_GS_R_ORDER_REPORT with
+{
+@UI.facet: [{
+//    qualifier: '',
+//    feature: '',
+//    id: '',
+    purpose: #HEADER,
+//    parentId: '',
+    position:10 ,
+//    exclude: true,
+//    hidden: true,
+//    isPartOfPreview: true,
+//    isSummary: true,
+//    isMap: true,
+//    importance: ,
+//    label: '',
+    type: #DATAPOINT_REFERENCE,
+//    targetElement: '',
+    targetQualifier: 'Actualcost',
+    url: ''
+},
+{
+    purpose: #STANDARD,
+    position: 20,
+    type: #FIELDGROUP_REFERENCE,
+    targetQualifier: 'orderInfo',
+    label: 'Order'
+    },
+    
+    {
+    purpose: #STANDARD,
+    position: 30,
+    type: #LINEITEM_REFERENCE,
+    targetElement: '_SimilarOrders',
+    label: 'Orders'
+
+}]
+  @UI.lineItem: [{ position: 10, importance: #HIGH   }]
+  @UI.selectionField: [{ position: 8 }]
+  @UI.fieldGroup: [{ qualifier: 'orderInfo', position: 10, label: 'Order ID' }]
+  OrderID;
+  @UI.lineItem: [{ position: 20, importance: #HIGH , label: 'Order Description'},
+                 { position: 20, importance: #HIGH,label: 'Order Description', qualifier: 'companycode' }]
+  @UI.fieldGroup: [{ qualifier: 'orderInfo', position: 20, label: 'Order Description' }]
+
+  OrderDescription;
+  @UI.lineItem: [{ position: 30,importance: #MEDIUM, qualifier: 'companycode'   }]
+  @UI.selectionField: [{ position: 20}]
+  @UI.fieldGroup: [{ qualifier: 'orderInfo', position: 30, label: 'Company Code' }]
+
+  CompanyCode;
+  @UI.lineItem: [{ position: 40 , qualifier: 'companycode' }]
+  @UI.selectionField: [{ position: 30 }]
+  @UI.fieldGroup: [{ qualifier: 'orderInfo', position: 40, label: 'Order Type' }]
+
+  OrderType;
+  @UI.lineItem: [{ position: 50 , importance: #LOW }]
+  @UI.fieldGroup: [{ qualifier: 'orderInfo', position: 50, label: 'External Order ID' }]
+
+  ExternalOrderID;
+  @UI.lineItem: [{ position: 60  }]
+  @UI.fieldGroup: [{ qualifier: 'orderInfo', position: 60, label: 'Project Definition' }]
+
+  ProjectDefinition;
+  @UI.lineItem: [{ position: 70, label: 'Project Description'  }]
+  @UI.fieldGroup: [{ qualifier: 'orderInfo', position: 70, label: 'Project Description' }]
+
+  ProjectDescription;
+  @UI.lineItem: [{ position: 80  }]
+  @UI.fieldGroup: [{ qualifier: 'orderInfo', position: 80, label: 'WBS Element' }]
+
+  PSPElement;
+  @UI.lineItem: [{ position: 90, label: 'WBS Description'  }]
+  @UI.fieldGroup: [{ qualifier: 'orderInfo', position: 90, label: 'WBS Description' }]
+
+  WBSElementDescription;
+  @UI.lineItem: [{ position: 100  }]
+  @UI.fieldGroup: [{ qualifier: 'orderInfo', position: 100, label: 'Person Responsible' }]
+
+  PersonResponsible;
+  @UI.lineItem: [{ position: 110, qualifier: 'companycode'  }]
+  @UI.fieldGroup: [{ qualifier: 'orderInfo', position: 110, label: 'Created On' }]
+
+  CreatedOnDate;
+  @UI.lineItem: [{ position: 120, qualifier: 'companycode' ,importance: #HIGH }]
+  @UI.fieldGroup: [{ qualifier: 'orderInfo', position: 120, label: 'Applicant' }]
+
+  Applicant;
+  @UI.lineItem: [{ position: 125,importance: #HIGH }]
+//  @UI.dataPoint: { qualifier: 'Actualcost', title: 'Actual Cost'}
+  @UI.fieldGroup: [{ qualifier: 'orderInfo', position: 130, label: 'Currency' }]
+  
+  CompanyCodeCurrency;
+  @UI.lineItem: [{ position: 130,importance: #HIGH, qualifier: 'companycode', criticality: 'TotalActualCostcriticallity'  }]
+  @UI.dataPoint: { qualifier: 'Actualcost', title: 'Actual Cost', criticality: 'TotalActualCostcriticallity'}
+  @UI.fieldGroup: [{ qualifier: 'orderInfo', position: 140, label: 'Actual Cost', criticality: 'TotalActualCostcriticallity', criticalityRepresentation: #WITHOUT_ICON}]
+
+  TotalActualCost;
+  @UI.lineItem: [{ position: 140,importance: #HIGH  }]
+  @UI.fieldGroup: [{ qualifier: 'orderInfo', position: 150, label: 'Actual Balance' }]
+
+  ActualBalance;
+  @UI.lineItem: [{ position: 150,importance: #HIGH  }]
+  @UI.fieldGroup: [{ qualifier: 'orderInfo', position: 160, label: 'Total Actual Revenue' }]
+
+  TotalActualRevenueSum;
+}

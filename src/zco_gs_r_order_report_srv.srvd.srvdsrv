@@ -1,0 +1,5 @@
+@EndUserText.label: 'Gasline: Report for Orders (Service Definition)'
+define service ZCO_GS_R_ORDER_REPORT_SRV {
+  expose ZCO_C_GS_R_ORDER_REPORT;
+  expose ZCO_C_GS_R_ORDER_SIBLINGS;
+}

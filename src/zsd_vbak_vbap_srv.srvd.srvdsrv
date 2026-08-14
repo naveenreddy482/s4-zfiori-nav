@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition Test MM'
+define service ZSD_VBAK_VBAP_SRV {
+  expose ZSD_VBAK_VBAP;
+}
