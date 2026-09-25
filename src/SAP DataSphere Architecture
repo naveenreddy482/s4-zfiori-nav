@@ -1,0 +1,42 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Seite-1" id="F7-zzFWN9Zapn8sFX3hk">
+    <mxGraphModel dx="1849" dy="564" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="vgHLKmIOu0_wO3agznUE-1" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;labelBackgroundColor=none;fontColor=default;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint y="360" as="sourcePoint" />
+            <mxPoint x="820" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vgHLKmIOu0_wO3agznUE-6" edge="1" parent="1" source="vgHLKmIOu0_wO3agznUE-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vgHLKmIOu0_wO3agznUE-5" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="390" />
+              <mxPoint x="380" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vgHLKmIOu0_wO3agznUE-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="CDS Views&amp;nbsp;" vertex="1">
+          <mxGeometry height="50" width="600" x="80" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="vgHLKmIOu0_wO3agznUE-5" parent="1" style="whiteSpace=wrap;html=1;rounded=1;" value="" vertex="1">
+          <mxGeometry height="290" width="600" x="80" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vgHLKmIOu0_wO3agznUE-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="75" width="450" x="140" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="vgHLKmIOu0_wO3agznUE-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Replication Flow" vertex="1">
+          <mxGeometry height="30" width="120" x="340" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="vgHLKmIOu0_wO3agznUE-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="S4" vertex="1">
+          <mxGeometry height="30" width="60" x="600" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="vgHLKmIOu0_wO3agznUE-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Inbound Layer" vertex="1">
+          <mxGeometry height="30" width="60" x="160" y="290" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
